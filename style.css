@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  color: #2f3a32;
+  line-height: 1.8;
+  background-color: #f7f3ea;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(22, 45, 33, 0.55), rgba(22, 45, 33, 0.55)),
+    url("https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.navbar {
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 40, 30, 0.35);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #d8c38a;
+}
+
+.hero-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  max-width: 760px;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+.btn {
+  width: fit-content;
+  padding: 12px 32px;
+  background: #b08d57;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #8d6e3f;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 90px 10%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 28px;
+  color: #244832;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #b08d57;
+  margin-top: 10px;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.light {
+  background-color: #efe7d8;
+  max-width: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+}
+
+.card h3 {
+  color: #315f43;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.garden-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.garden-list article {
+  background: #fffaf0;
+  border-left: 6px solid #b08d57;
+  padding: 26px;
+  border-radius: 12px;
+}
+
+.garden-list h3 {
+  font-size: 24px;
+  color: #315f43;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #203828;
+  color: white;
+}
+
+#topBtn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: #b08d57;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+#topBtn:hover {
+  background: #8d6e3f;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .garden-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content {
+    padding: 0 8%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 70px 8%;
+  }
+}
